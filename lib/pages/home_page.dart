@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_demo/services/authentication.dart';
+import '../services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:flutter_login_demo/models/todo.dart';
+import '../models/todo.dart';
 import 'dart:async';
 
 class HomePage extends StatefulWidget {
