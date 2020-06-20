@@ -1,5 +1,5 @@
-<b> Do My Errand </b>
+# Do My Errand
 
-Project created by @saaketporay
+Project created by @varuncj02 @saaketporay
 
 
