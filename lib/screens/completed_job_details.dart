@@ -72,7 +72,21 @@ class CompletedJobsDetail extends StatelessWidget {
                   child: Row(children: [
                     Icon(Icons.attach_money),
                     Text("${" " + selectedJob.price.toString() + " per hour"}"),
-                  ]))]));
+                  ])),
+              Container(
+                  padding: EdgeInsets.all(10),
+                  child: Row(children: [
+                    Icon(Icons.star),
+                    Text("4.5"), // Adding text interactivity an issue
+                  ],  
+                  ),
+              ),
+              Container(
+                  padding: EdgeInsets.all(10),
+                  child: Row(children: [
+                    Icon(Icons.rate_review),
+                    Text("Sample Rating/ Description of the Job"), // How de we retrieve the value of a text field
+                  ],))]));
               
   }
 }
