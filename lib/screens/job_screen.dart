@@ -16,6 +16,8 @@ class _JobScreenState extends State<JobScreen> {
     Navigator.of(context).pushReplacementNamed(Accepted.routeName);
   }
 
+  static List<Job> acceptedJob = [];
+
   @override
   Widget build(BuildContext context) {
     final jobId = ModalRoute.of(context).settings.arguments as String;
@@ -94,7 +96,11 @@ class _JobScreenState extends State<JobScreen> {
                               actions: <Widget>[
                                 FlatButton(
                                   child: Text("Yes"),
-                                  onPressed: acceptJob,
+                                  onPressed: () {
+                                    acceptedJob.add(selectedJob);
+                                    print(acceptedJob[0].jobTitle);
+                                    acceptJob();
+                                  },
                                 ),
                                 FlatButton(
                                   child: Text("No"),
