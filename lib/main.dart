@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/screens/job_screen.dart';
+import './screens/job_list_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +15,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Jobs'),
+      home: JobsList(), // default is '/'
+      routes: {
+        JobsList.routeName: (ctx) => JobsList(),
+        JobScreen.routeName: (ctx) =>
+            JobScreen(),
+      },
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (ctx) => JobsList(),
+        );
+      },
     );
   }
 }
