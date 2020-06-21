@@ -10,12 +10,19 @@ class Accepted extends StatelessWidget {
         body: Container(
             margin: EdgeInsets.symmetric(vertical: 250),
             alignment: Alignment.center,
-            child: Column(children: [
-              Icon(
+            child: Column(children: <Widget> [
+              Expanded(
+              child: Icon(
                 Icons.done,
                 size: 100,
               ),
-              Text("You have Accepted this Job")
-            ])));
+              ),
+              Container(
+              child: Text("You have Accepted this Job")
+              ),
+             ]
+            )
+            )
+            );
   }
 }
