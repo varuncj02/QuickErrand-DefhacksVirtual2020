@@ -38,10 +38,6 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-   bool _isAccepted(String id) {
-    return acceptedJobs.any((job) => job.jobID == id);
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
