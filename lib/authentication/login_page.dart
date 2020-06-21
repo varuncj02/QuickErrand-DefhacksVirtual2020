@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:helloworld/screens/tabs_screen.dart';
 
 class LoginPage extends StatefulWidget {
   @override 
@@ -16,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
 
   String _userName = "";
   String _password = "";
-  DifferentPages _page = DifferentPages.register;
+  DifferentPages _page = DifferentPages.login;
 
   _LoginPageState() {
     _userNameFilter.addListener(_userNameListen);
@@ -70,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildLoginBar(BuildContext context){
     return new AppBar(
-      title: new Text("Register User"),
+      title: new Text("Login"),
       centerTitle: true,
     );
   }
@@ -109,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
             new RaisedButton(
               child: new Text('Login'),
               onPressed: (){
-                _loginPressed();
+                _loginPressed(context);
               }, // Todo: Code for the Navigation too the other screens needs to be added
             ),
             new FlatButton(
@@ -146,8 +147,8 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 //Navigation to the home page to be added
-void _loginPressed () {
-
+void _loginPressed (BuildContext context) {
+  Navigator.of(context).pushNamed(TabsScreen.routeName);
 }
 
 // Navigation to create the user here 
@@ -156,5 +157,5 @@ void _createAccountPressed() {
 }
 
 enum DifferentPages {
-  register, login
+  login, register
 }
