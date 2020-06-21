@@ -1,4 +1,4 @@
-package com.example.defhacks
+package com.example.errand_doer
 
 import io.flutter.embedding.android.FlutterActivity
 
