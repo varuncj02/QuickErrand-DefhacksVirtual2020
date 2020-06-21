@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=C:\Varun Stuff\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\VarunFlutter\errand_doer"
+export "FLUTTER_APPLICATION_PATH=C:\DefFirebase\Defhacks2020"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build\ios"
