@@ -1,31 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/screens/accepted.dart';
-import '../models/job.dart';
-import '../dummydata.dart';
+import 'package:helloworld/dummydata.dart';
+import 'package:helloworld/models/job.dart';
 
-import '../screens/completed_jobs_screen.dart';
 
-class JobScreen extends StatefulWidget {
+class CompletedJobsDetail extends StatelessWidget {
 
+  static const routeName = '/CompletedJobsScreen';
+
+ List<Job> jobData = DUMMY_JOBS;
  
-  static const routeName = '/JobScreen';
-
-    final Function addAccepted;
-
-   JobScreen(this.addAccepted);
-
-  @override
-  _JobScreenState createState() => _JobScreenState();
-}
-
-class _JobScreenState extends State<JobScreen> {
-  List<Job> jobData = DUMMY_JOBS;
- 
-
-  void acceptJob(String jobID) {
-    Navigator.of(context).pushReplacementNamed(Accepted.routeName);
-    widget.addAccepted(jobID);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,32 +72,7 @@ class _JobScreenState extends State<JobScreen> {
                   child: Row(children: [
                     Icon(Icons.attach_money),
                     Text("${" " + selectedJob.price.toString() + " per hour"}"),
-                  ])),
-              Container(
-                  margin: EdgeInsets.symmetric(vertical: 10),
-                  alignment: Alignment.center,
-                  child: Container(
-                    width: 300,
-                    child: RaisedButton(
-                      child: Text("Accept job"),
-                      onPressed: () => showDialog(
-                          context: context,
-                          child: AlertDialog(
-                              title: Text(
-                                  "Are you sure you want to accept this job?"),
-                              actions: <Widget>[
-                                FlatButton(
-                                  child: Text("Yes"),
-                                  onPressed: () => acceptJob(selectedJob.jobID),
-                                ),
-                                FlatButton(
-                                  child: Text("No"),
-                                  onPressed: () {Navigator.of(context).pop();} ,
-                                )
-                              ])),
-                      color: Colors.blueAccent,
-                    ),
-                  )),
-            ]));
+                  ]))]));
+              
   }
 }

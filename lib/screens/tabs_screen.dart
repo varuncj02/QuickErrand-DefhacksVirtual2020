@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/models/job.dart';
 import './profile_screen.dart';
 import './job_list_screen.dart';
 import './completed_jobs_screen.dart';
 
 
 class TabsScreen extends StatefulWidget {
-  //final List<Job> favoriteMeals;
+  final List<Job> completedJobs;
 
-  //TabsScreen(this.favoriteMeals);
+  TabsScreen(this.completedJobs);
 
   @override
   _TabsScreenState createState() => _TabsScreenState();
@@ -25,7 +26,7 @@ class _TabsScreenState extends State<TabsScreen> {
         'title': 'Available Jobs',
       },
       {
-        'page': CompletedJobs(),
+        'page': CompletedJobs(widget.completedJobs),
         'title': 'Completed Jobs',
       },
       {
