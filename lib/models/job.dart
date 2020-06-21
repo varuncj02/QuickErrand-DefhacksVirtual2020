@@ -23,7 +23,9 @@ class Job {
   final String jobDescription;
   final double price;
   final Type jobType;
+  //final String jobType;
   final Skills jobSkills;
+  //final String jobSkills;
   final String jobLocation;
   final String jobTime;
   final String userName;

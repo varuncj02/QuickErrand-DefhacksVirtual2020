@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "921787515419",
+    "firebase_url": "https://fir-erranddoer.firebaseio.com",
+    "project_id": "fir-erranddoer",
+    "storage_bucket": "fir-erranddoer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921787515419:android:08cafddb5abc19f108eebe",
+        "android_client_info": {
+          "package_name": "com.example.errands"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921787515419-doju3jlmo0uhverujue8a7mpj6a51g6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYlC8rLhU0OXennjCrPHelYkIX5oNPARs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921787515419-doju3jlmo0uhverujue8a7mpj6a51g6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
