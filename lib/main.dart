@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/screens/accepted.dart';
 import 'package:helloworld/screens/job_screen.dart';
 import './screens/job_list_screen.dart';
 import './dummydata.dart';
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
         JobsList.routeName: (ctx) => JobsList(),
         JobScreen.routeName: (ctx) =>
             JobScreen(),
+            Accepted.routeName: (ctx) =>
+            Accepted(),
       },
       onGenerateRoute: (settings) {
         print(settings.arguments);
