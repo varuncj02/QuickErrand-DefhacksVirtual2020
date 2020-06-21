@@ -52,7 +52,10 @@ class _JobScreenState extends State<JobScreen> {
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
               ),
               Divider(
-                color: Colors.blueAccent,
+                //color: Colors.blueAccent,
+                //color: Colors.cyan,
+                color: Color.fromRGBO(244, 154, 193, 100),
+
               ),
               Container(
                   child: Text("Job Description"),
@@ -61,7 +64,9 @@ class _JobScreenState extends State<JobScreen> {
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.blueAccent,
+                      //color: Colors.blueAccent,
+                      //color: Colors.cyan,
+                      color: Color.fromRGBO(244, 154, 193, 100),
                     ),
                     borderRadius: BorderRadius.circular(10.0)),
                 padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -112,7 +117,8 @@ class _JobScreenState extends State<JobScreen> {
                                   onPressed: () {Navigator.of(context).pop();} ,
                                 )
                               ])),
-                      color: Colors.blueAccent,
+                      //color: Colors.blueAccent,
+                      color: Colors.cyan,
                     ),
                   )),
             ]));

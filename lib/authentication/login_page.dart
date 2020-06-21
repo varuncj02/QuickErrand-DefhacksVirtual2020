@@ -7,6 +7,7 @@ import 'package:helloworld/dummydata.dart';
 import 'package:helloworld/screens/tabs_screen.dart';
 
 
+
 class LoginPage extends StatefulWidget {
 
 
@@ -17,6 +18,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _userNameFilter = new TextEditingController();
 
+  final String dummyPassword = "test";
   final String targetName = DUMMY_JOBS[0].userName;
 
   final TextEditingController _passwordFilter = new TextEditingController();
@@ -64,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
     return new Scaffold(
       appBar: _buildLoginBar(context),
       body: new Container(
-        padding: EdgeInsets.all(15.0),
+        padding: EdgeInsets.all(25.0),
         child: new Column(
           children: <Widget>[
             _buildField(),
@@ -77,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildLoginBar(BuildContext context){
     return new AppBar(
-      title: new Text("Login"),
+      title: new Text("QuickErrand"),
       centerTitle: true,
     );
   }
@@ -119,13 +121,16 @@ class _LoginPageState extends State<LoginPage> {
                 /*print(_userName);
                 print(targetName);
                 print(_userName.trim() == targetName.trim());*/
-                if(_userName.trim() == targetName.trim()) {
-                _loginPressed(context);
+                if(_userName.trim() == targetName.trim() && _password.trim() == "test") {
+                  _loginPressed(context);
+                }
+                else {
+                  Text('Wrong UserName or PassWord');
                 }
               }, // Todo: Code for the Navigation too the other screens needs to be added
             ),
             new FlatButton(
-              child: new Text('No Account Register'),
+              child: new Text('Account Registered'),
               onPressed: (){
                 _pageChange();
               }
@@ -161,6 +166,11 @@ class _LoginPageState extends State<LoginPage> {
 //Navigation to the home page to be added
 void _loginPressed (BuildContext context) {
   Navigator.of(context).pushNamed(TabsScreen.routeName);
+}
+
+void _wrongInfoEntered(BuildContext context){
+  
+
 }
 
 // Navigation to create the user here 

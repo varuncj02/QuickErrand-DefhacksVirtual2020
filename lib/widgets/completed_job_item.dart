@@ -39,7 +39,10 @@ class CompletedJobItem extends StatelessWidget {
     return InkWell(
       onTap: () => selectJob(context),
       child: Card(
-          color: Colors.blueAccent,
+         // color: Colors.blueAccent,
+          //color: Colors.pinkAccent,
+          color: Color.fromRGBO(244, 154, 193, 100),
+
           child: Column(children: [
             Container(
               child: Text(jobTitle,

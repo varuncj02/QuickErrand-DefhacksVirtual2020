@@ -12,7 +12,7 @@ const DUMMY_JOBS = const [
     jobTime: '60',
     jobType: Type.Labor,
     price: 15, 
-    userName: 'zxhNm1',
+    userName: 'User1',
   ),
 
   Job(
@@ -24,7 +24,7 @@ const DUMMY_JOBS = const [
     jobTime: '75',
     jobType: Type.Misc,
     price: 10, 
-    userName: 'zxhNm1',
+    userName: 'User1',
   ),
 
   Job(
@@ -36,7 +36,7 @@ const DUMMY_JOBS = const [
     jobTime: '30',
     jobType: Type.Delivery,
     price: 6, 
-    userName: 'zxhNm1',
+    userName: 'User1',
   ),
 
   Job(
@@ -48,7 +48,7 @@ const DUMMY_JOBS = const [
     jobTime: '120',
     jobType: Type.Repair,
     price: 15, 
-    userName: 'zxhNm1',
+    userName: 'User1',
   ),
 
     Job(
