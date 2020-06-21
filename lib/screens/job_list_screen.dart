@@ -15,7 +15,7 @@ class JobsList extends StatelessWidget {
         title: Text("Available Jobs"),
       ),
       body: ListView.builder(
-        itemCount: 4,
+        itemCount: DUMMY_JOBS.length,
         itemBuilder: (BuildContext ctx, int index) {
           return Column(
             children: [
@@ -28,6 +28,7 @@ class JobsList extends StatelessWidget {
                 jobTime: data[index].jobTime,
                 jobType: data[index].jobType,
                 price: data[index].price,
+                //userName: data[index].userName,
               ),
               Divider(),
             ],

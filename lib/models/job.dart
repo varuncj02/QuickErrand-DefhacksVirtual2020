@@ -14,6 +14,7 @@ enum Skills {
   Dogwalking,
   Plumbing,
   Electrical,
+  Woordwork,
 }
 
 class Job {
@@ -25,6 +26,7 @@ class Job {
   final Skills jobSkills;
   final String jobLocation;
   final String jobTime;
+  final String userName;
 
   const Job({
     @required this.jobID,
@@ -35,5 +37,6 @@ class Job {
     @required this.jobSkills,
     @required this.jobLocation,
     @required this.jobTime,
+    @required this.userName
   });
 }

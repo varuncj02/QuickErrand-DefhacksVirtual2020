@@ -11,7 +11,8 @@ const DUMMY_JOBS = const [
     jobSkills: Skills.Lawnmowing,
     jobTime: '60',
     jobType: Type.Labor,
-    price: 15 
+    price: 15, 
+    userName: 'zxhNm1',
   ),
 
   Job(
@@ -22,7 +23,8 @@ const DUMMY_JOBS = const [
     jobSkills: Skills.Dogwalking,
     jobTime: '75',
     jobType: Type.Misc,
-    price: 10
+    price: 10, 
+    userName: 'zxhNm1',
   ),
 
   Job(
@@ -33,7 +35,8 @@ const DUMMY_JOBS = const [
     jobSkills: Skills.PickupDrop,
     jobTime: '30',
     jobType: Type.Delivery,
-    price: 6
+    price: 6, 
+    userName: 'zxhNm1',
   ),
 
   Job(
@@ -44,7 +47,33 @@ const DUMMY_JOBS = const [
     jobSkills: Skills.Electrical,
     jobTime: '120',
     jobType: Type.Repair,
-    price: 15
+    price: 15, 
+    userName: 'zxhNm1',
   ),
+
+    Job(
+    jobID: 'j5',
+    jobTitle: 'Fix my fence',
+    jobDescription: "Very old fence. Needs some work",
+    jobLocation: 'Allen',
+    jobSkills: Skills.Woordwork,
+    jobTime: '120',
+    jobType: Type.Repair,
+    price: 20, 
+    userName: 'zxhNm1',
+  ),
+
+  Job(
+    jobID: 'j6',
+    jobTitle: 'Need my dog walked',
+    jobDescription: "3yo labrador. Likes pooping on Coit rd. Very jumpy",
+    jobLocation: 'Richardson',
+    jobSkills: Skills.Dogwalking,
+    jobTime: '75',
+    jobType: Type.Misc,
+    price: 10, 
+    userName: 'zxhNm1',
+  ),
+
 
 ];

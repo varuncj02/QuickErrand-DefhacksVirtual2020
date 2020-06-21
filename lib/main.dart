@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/screens/job_screen.dart';
 import './screens/job_list_screen.dart';
+import './dummydata.dart';
+import './models/job.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
+  List<Job> jobData = DUMMY_JOBS;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
