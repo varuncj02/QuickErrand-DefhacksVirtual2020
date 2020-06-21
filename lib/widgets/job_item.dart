@@ -67,7 +67,8 @@ class JobItem extends StatelessWidget {
                     padding: EdgeInsets.all(10)),
                 Container(
                     child: Row(children: [
-                      Text("${"\$ " + price.toString() + " per hour"}"),
+                      Icon(Icons.attach_money),
+                      Text("${price.toString() + " per hour"}"),
                     ]),
                     padding: EdgeInsets.all(10)),
               ],

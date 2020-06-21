@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/screens/accepted.dart';
 import 'package:helloworld/screens/job_screen.dart';
+import 'package:helloworld/screens/tabs_screen.dart';
 import './screens/job_list_screen.dart';
 import './dummydata.dart';
 import './models/job.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: JobsList(), // default is '/'
+      home: TabsScreen(), // default is '/'
       routes: {
         JobsList.routeName: (ctx) => JobsList(),
         JobScreen.routeName: (ctx) =>

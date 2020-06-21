@@ -10,31 +10,26 @@ class JobsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Available Jobs"),
-      ),
-      body: ListView.builder(
-        itemCount: DUMMY_JOBS.length,
-        itemBuilder: (BuildContext ctx, int index) {
-          return Column(
-            children: [
-              JobItem(
-                jobID: data[index].jobID,
-                jobTitle: data[index].jobTitle,
-                jobDescription: data[index].jobDescription,
-                jobSkills: data[index].jobSkills,
-                jobLocation: data[index].jobLocation,
-                jobTime: data[index].jobTime,
-                jobType: data[index].jobType,
-                price: data[index].price,
-                //userName: data[index].userName,
-              ),
-              Divider(),
-            ],
-          );
-        },
-      ),
+    return ListView.builder(
+      itemCount: DUMMY_JOBS.length,
+      itemBuilder: (BuildContext ctx, int index) {
+        return Column(
+          children: [
+            JobItem(
+              jobID: data[index].jobID,
+              jobTitle: data[index].jobTitle,
+              jobDescription: data[index].jobDescription,
+              jobSkills: data[index].jobSkills,
+              jobLocation: data[index].jobLocation,
+              jobTime: data[index].jobTime,
+              jobType: data[index].jobType,
+              price: data[index].price,
+              //userName: data[index].userName,
+            ),
+            Divider(),
+          ],
+        );
+      },
     );
   }
 }
