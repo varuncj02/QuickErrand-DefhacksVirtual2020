@@ -38,7 +38,7 @@ class _JobScreenState extends State<JobScreen> {
             //mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 21, vertical: 10),
                 child: Text(selectedJob.jobTitle,
                     textAlign: TextAlign.center,
                     style:

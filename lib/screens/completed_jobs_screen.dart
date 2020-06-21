@@ -29,7 +29,7 @@ final List<Job> completedJobs;
               jobTime: completedJobs[index].jobTime,
               jobType: completedJobs[index].jobType,
               price: completedJobs[index].price,
-              //userName: data[index].userName,
+             
             );
         },
         itemCount: completedJobs.length,

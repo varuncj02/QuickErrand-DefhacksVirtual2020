@@ -8,7 +8,7 @@ class Accepted extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: Text("Job Accepted")),
         body: Container(
-            margin: EdgeInsets.symmetric(vertical: 250),
+            margin: EdgeInsets.symmetric(vertical: 240),
             alignment: Alignment.center,
             child: Column(children: [
               Icon(

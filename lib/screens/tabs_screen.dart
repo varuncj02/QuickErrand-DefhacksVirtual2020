@@ -30,7 +30,7 @@ class _TabsScreenState extends State<TabsScreen> {
         'title': 'Completed Jobs',
       },
       {
-        'page': Profile(),
+        'page': Profile(widget.completedJobs),
         'title': 'Your Profile',
       },
     ];

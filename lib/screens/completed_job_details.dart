@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:helloworld/dummydata.dart';
 import 'package:helloworld/models/job.dart';
 
-
 class CompletedJobsDetail extends StatelessWidget {
-
   static const routeName = '/CompletedJobsScreen';
 
- List<Job> jobData = DUMMY_JOBS;
- 
+  List<Job> jobData = DUMMY_JOBS;
 
   @override
   Widget build(BuildContext context) {
     final jobId = ModalRoute.of(context).settings.arguments as String;
     final selectedJob = DUMMY_JOBS.firstWhere((job) => job.jobID == jobId);
+    final moneyEarned = selectedJob.price * 2;
 
     return Scaffold(
         appBar: AppBar(title: Text("Job Details")),
@@ -38,8 +36,8 @@ class CompletedJobsDetail extends StatelessWidget {
                 color: Colors.blueAccent,
               ),
               Container(
-                  child: Text("Job Description"),
-                  margin: EdgeInsets.only(left: 20, top: 20)),
+                  child: Text("Job Description",style: TextStyle(fontWeight: FontWeight.bold)),
+                  margin: EdgeInsets.only(left: 10, top: 20, bottom: 10)),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
@@ -54,25 +52,81 @@ class CompletedJobsDetail extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 20, right: 20),
+                margin: EdgeInsets.all(20),
                 child: Row(children: [
-                  Icon(Icons.timer),
-                  Text("${selectedJob.jobTime + " minutes"}"),
+                  Container(
+                    //margin: EdgeInsets.only(top: 20, right: 20),
+                    child: Row(children: [
+                      Icon(Icons.timer),
+                      Text("${selectedJob.jobTime + " minutes"}"),
+                    ]),
+                    padding: EdgeInsets.all(10),
+                  ),
+                  Container(
+                      padding: EdgeInsets.all(10),
+                      child: Row(children: [
+                        Icon(Icons.location_on),
+                        Text(selectedJob.jobLocation),
+                      ])),
+                  Container(
+                      padding: EdgeInsets.all(10),
+                      child: Row(children: [
+                        Icon(Icons.attach_money),
+                        Text(
+                            "${" " + selectedJob.price.toString() + " per hour"}"),
+                      ]))
                 ]),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey,
+              ),
+              Container(
+                  margin: EdgeInsets.all(10), child: Text("Your Performance", style: TextStyle(fontWeight: FontWeight.bold),)),
+              Container(
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                   
+                    children: [
+                      Icon(Icons.timer),
+                      Text(
+                          '${"You worked for 2 hours "}'),
+                    ],
+                  )),
+              Container(
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                   
+                    children: [
+                      Icon(Icons.attach_money),
+                      Text(
+                          '${"You earned " + moneyEarned.toString()}'),
+                    ],
+                  )),
+              
+              Container(
                 padding: EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    Icon(Icons.star),
+                    Text("4.5"), // Adding text interactivity an issue
+                  ],
+                ),
               ),
               Container(
                   padding: EdgeInsets.all(10),
-                  child: Row(children: [
-                    Icon(Icons.location_on),
-                    Text(selectedJob.jobLocation),
-                  ])),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: Row(children: [
-                    Icon(Icons.attach_money),
-                    Text("${" " + selectedJob.price.toString() + " per hour"}"),
-                  ]))]));
-              
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(Icons.rate_review),
+                      Container(
+                          margin: EdgeInsets.only(left: 10),
+                          width: 300,
+                          child: Text(
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud")), // How de we retrieve the value of a text field
+                    ],
+                  )),
+                  
+            ]));
   }
 }

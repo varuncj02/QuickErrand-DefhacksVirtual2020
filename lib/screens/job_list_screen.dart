@@ -24,7 +24,7 @@ class JobsList extends StatelessWidget {
               jobTime: data[index].jobTime,
               jobType: data[index].jobType,
               price: data[index].price,
-              //userName: data[index].userName,
+              
             ),
             Divider(),
           ],
