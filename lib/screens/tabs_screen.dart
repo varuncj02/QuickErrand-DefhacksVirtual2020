@@ -6,6 +6,8 @@ import './completed_jobs_screen.dart';
 
 
 class TabsScreen extends StatefulWidget {
+  static const routeName = '/TabsScreen';
+
   final List<Job> completedJobs;
 
   TabsScreen(this.completedJobs);

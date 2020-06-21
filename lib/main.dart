@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/authentication/login_page.dart';
 import 'package:helloworld/screens/accepted.dart';
 import 'package:helloworld/screens/completed_job_details.dart';
 import 'package:helloworld/screens/job_screen.dart';
@@ -46,7 +47,8 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: TabsScreen(acceptedJobs), // default is '/'
+        home: LoginPage(),
+     // home: TabsScreen(acceptedJobs), // default is '/'
       routes: {
         JobsList.routeName: (ctx) => JobsList(),
         JobScreen.routeName: (ctx) =>
@@ -54,6 +56,7 @@ class _MyAppState extends State<MyApp> {
             Accepted.routeName: (ctx) =>
             Accepted(),
             CompletedJobsDetail.routeName: (ctx) => CompletedJobsDetail(),
+            TabsScreen.routeName: (ctx) => TabsScreen(acceptedJobs),
       },
       onGenerateRoute: (settings) {
         print(settings.arguments);
