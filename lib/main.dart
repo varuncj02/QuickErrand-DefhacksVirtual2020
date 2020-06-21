@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/rendering.dart';
 
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      /*title: 'Flutter Demo',
       theme: ThemeData(
         
         primarySwatch: Colors.blue,
@@ -19,10 +20,98 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+    */
+      debugShowCheckedModeBanner: false,
+      title: 'DB Info',
+      home: MyJobPage(),
     );
   }
 }
 
+class MyJobPage extends StatefulWidget {
+  @override 
+  _MyJobPageState createState() => _MyJobPageState();
+}
+
+class _MyJobPageState extends State<MyJobPage> {
+  @override 
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(centerTitle:true, title: Text('Job Page')),
+      body: _buildBody(context),
+    );
+  }
+
+  Widget _buildBody(BuildContext context){
+    return StreamBuilder<QuerySnapshot>(
+      stream: Firestore.instance.collection('JobPage').snapshots(),
+      builder: (context, snapshot) {
+        return _buildList(context, snapshot.data.documents);
+      },
+    );
+  }
+
+  Widget _buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
+    return ListView(
+      padding: const EdgeInsets.only(top: 20.0),
+      children : snapshot.map((data) => _buildListItem(context, data)).toList(),
+    );
+  }
+
+  Widget _buildListItem(BuildContext context, DocumentSnapshot data){
+    final dbinfo = DBInfo.fromSnapshot(data);
+
+    return Padding(
+      key: ValueKey(dbinfo.JobID),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(5.0),
+        ),
+        child: ListTile(
+          title: Text(dbinfo.JobID),
+          trailing: Text(dbinfo.JobTitle),
+          onTap: () => print(dbinfo),
+        )
+      ),
+    );
+  }
+}
+
+
+class DBInfo {
+  final String JobID;
+  final String JobTitle;
+  final int Price;
+  final String Region;
+  final String Skills;
+  final int Time;
+  final DocumentReference reference;
+
+  DBInfo.fromMap(Map<String, dynamic> map, {this.reference})
+    : assert(map['JobID'] != null),
+      assert(map['JobTitle'] != null),
+      assert(map['Price'] != null),
+      assert(map['Region'] != null),
+      assert(map['Skills'] != null),
+      assert(map['Time'] != null),
+      JobID = map['JobID'],
+      JobTitle = map['JobTitle'],
+      Price = map['Price'],
+      Region = map['Region'],
+      Skills = map['Skills'],
+      Time = map['Time'];
+
+  DBInfo.fromSnapshot(DocumentSnapshot snapshot)
+    : this.fromMap(snapshot.data, reference: snapshot.reference);
+
+}
+
+
+
+
+// Default Code
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
