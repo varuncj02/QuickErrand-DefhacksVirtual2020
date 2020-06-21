@@ -3,15 +3,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:helloworld/dummydata.dart';
 import 'package:helloworld/screens/tabs_screen.dart';
 
+
 class LoginPage extends StatefulWidget {
+
+
   @override 
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _userNameFilter = new TextEditingController();
+
+  final String targetName = DUMMY_JOBS[0].userName;
 
   final TextEditingController _passwordFilter = new TextEditingController();
 
@@ -110,7 +116,12 @@ class _LoginPageState extends State<LoginPage> {
             new RaisedButton(
               child: new Text('Login'),
               onPressed: (){
+                /*print(_userName);
+                print(targetName);
+                print(_userName.trim() == targetName.trim());*/
+                if(_userName.trim() == targetName.trim()) {
                 _loginPressed(context);
+                }
               }, // Todo: Code for the Navigation too the other screens needs to be added
             ),
             new FlatButton(
@@ -130,7 +141,8 @@ class _LoginPageState extends State<LoginPage> {
             new RaisedButton(
               child: new Text('Account Creation'),
               onPressed: (){
-                _createAccountPressed();
+                  _createAccountPressed();
+                
               }, // Todo: Code for the Navigation to account creation - Least Priority Task
             ),
             new FlatButton(
