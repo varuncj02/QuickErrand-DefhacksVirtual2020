@@ -23,5 +23,5 @@ We are proud to have finished a basic working app that we can use to show the fe
 ## What we learned
 How to use Flutter, how to work with people in various time zones!! (from USA to INDIA!)
 
-## What's next for Uber for anything
+## What's next for QuickErrand
 We think this could be launched into a startup and could have potential- we got this idea from people complaining how they needed to do something but were scared of catching something such as COVID-19.
