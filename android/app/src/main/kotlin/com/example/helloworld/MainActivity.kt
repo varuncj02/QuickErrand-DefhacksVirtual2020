@@ -1,4 +1,4 @@
-package com.example.errand_doer
+package com.example.helloworld
 
 import io.flutter.embedding.android.FlutterActivity
 
