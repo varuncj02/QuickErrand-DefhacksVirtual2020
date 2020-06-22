@@ -12,10 +12,10 @@ COVID-19 inspired us to find a solution to help the elderly do tasks and get hel
 This app has a log-in page where you create an account to either post a job or do a job. Suppose you are looking for a gig, you will find it on the main page and can accept anytime (such as Instacart and accepting grocery deliveries). You can also post a gig such as "I need someone to drop a package off for me," post your ideal pay rate, then have someone within your city come and help you out for that amount of pay.
 
 ## How we built it
-We used Flutter and VS Code to code our app.
+We used the Flutter Framework and Dart Programming Language with VS Code as our editor to code our app.
 
 ## Challenges we ran into
-We had trouble integrating with Firebase as we were new to app development with a database.
+We had trouble integrating with Firebase as we were new to mobile development with a cloud based real time database.
 
 ## Accomplishments that we're proud of
 We are proud to have finished a basic working app that we can use to show the features and how it could be launched in the real world. We came into this project with almost 0 knowledge of building apps with Flutter so this was an amazing learning experience
