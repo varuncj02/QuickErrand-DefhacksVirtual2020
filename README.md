@@ -1,4 +1,4 @@
-# Do My Errands
+# QuickErrand
 
 created by: @varuncj02 @saaketporay @vaibhavpras
 
